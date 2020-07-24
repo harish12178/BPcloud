@@ -1,0 +1,19 @@
+.card{
+    position: absolute;
+      left: 35%;
+      right: 35%;
+      top: 50%;
+      transform: translateY(-50%);
+    margin-top:2rem;
+margin-bottom:2rem;
+    }
+    .header{
+        justify-content:center;
+        }
+    
+.alignlist{
+    
+}    
+.icon{
+opacity:0.6;
+}

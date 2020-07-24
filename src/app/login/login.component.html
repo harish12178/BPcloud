@@ -1,0 +1,22 @@
+<div class="card">
+<mat-card>
+<mat-card-header class="header">
+<mat-card-title>Login</mat-card-title>
+</mat-card-header>
+<mat-card-content class="content">
+<mat-form-field class="cl_width">   
+<mat-label>Username</mat-label>
+    <input type="text"  matInput>
+</mat-form-field>
+<mat-form-field class="cl_width"> 
+<mat-label>Password</mat-label>
+    <input type="text"  matInput>
+</mat-form-field>
+<div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="0.3rem">
+<button mat-raised-button color="primary" (click)="handle_login()" class="button_width1">Login</button>
+<mat-label>Not an user?</mat-label>
+<button mat-raised-button color="warn" (click)="handle_signup()" class="button_width">Signup</button>
+</div>
+</mat-card-content>
+</mat-card>
+</div>

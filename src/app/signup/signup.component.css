@@ -1,0 +1,15 @@
+.card{
+position: absolute;
+  left: 35%;
+  right: 35%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.cl_width{
+width:90%;
+padding-left:5%;
+}
+.header{
+justify-content:center;
+}
+

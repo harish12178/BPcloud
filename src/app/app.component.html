@@ -1,0 +1,216 @@
+<router-outlet></router-outlet>
+
+
+
+
+<mat-drawer-container class="page">
+  <mat-drawer mode="side" opened class="sidenav">
+    <div fxLayout="column" fxLayoutAlign="space-between center" class="sidenav_height1">
+      <div fxLayout="column" fxLayoutAlign="space-evenly center" class="sidenav_height2">
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+          <img src="assets/images/menu.svg" width="45px">
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+          <img src="assets/images/details.svg" width="28px">
+          <label class="textclass1">My Details</label>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+          <img src="assets/images/order fulfilment.svg" width="26px">
+          <label class="textclass1">Order Fulfilment</label>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+          <img src="assets/images/lookup.svg" width="26px">
+          <label class="textclass1">PO Lookup</label>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+          <img src="assets/images/ASN.svg" width="26px">
+          <label class="textclass1">ASN</label>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+          <img src="assets/images/bill.svg" width="25px" height="30px">
+          <label class="textclass1">Invoice</label>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+          <img src="assets/images/payment-method (1).svg" width="28px">
+          <label class="textclass1">Payments</label>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+          <img src="assets/images/Stock.svg" width="26px">
+          <label class="textclass1">Stocks</label>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect" class="highlight">
+          <img src="assets/images/snd.svg" width="26px">
+          <label class="textclass2">Quality</label>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-evenly center" class="sidenav_height3">
+        <div class="seperator1"></div>
+        <div class="clickable">
+          <img src="assets/images/settings.svg" width="20px">
+        </div>
+        <div class="seperator2"></div>
+        <div fxLayout="column" fxLayoutAlign="center center" class="clickable">
+          <img src="assets/images/power.svg" width="15px">
+          <label class="textclass1">Logout</label>
+        </div>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar class="toolbar">
+      <span>Inspection Plan</span>
+      <span>
+        <img src="assets/images/logo 2.svg" width="70px" class="adjust_top">
+      </span>
+    </mat-toolbar>
+
+    <div class="formmargin">
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="box1">
+        <div class="box2 matcount">
+          <div fxLayout="column" fxLayoutAlign="space-between end" class="tit1">
+            <span>Material Count</span>
+            <div class="underline"></div>
+
+          </div>
+
+          <div class="spinner">
+            <mat-progress-spinner style="margin:0 auto;" mode="determinate" value="63" diameter="120" strokeWidth="15">
+            </mat-progress-spinner>
+            <div class="spinner1">
+              <mat-progress-spinner style="margin:0 auto;" mode="determinate" value="100" diameter="67" strokeWidth="2">
+              </mat-progress-spinner>
+            </div>
+            
+            <div class="iccontent1">957</div>
+            <div class="iccontent2">Material Count</div>
+            <div class="chart-container1">
+              <canvas id="canvas1"></canvas>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="box2 inspection">
+          <div fxLayout="column" fxLayoutAlign="space-between end" class="tit1">
+            <span>Inspection Method</span>
+            <div class="underline1"></div>
+
+          </div>
+
+            <div class="chart-container">
+              <canvas id="canvas"></canvas>
+            </div>
+            <div class="idccontent">Inspection</div>
+
+        </div>
+
+        <div class="box3" fxLayout="column" fxLayoutAlign="space-between end">
+          <div class="swidth twinput" fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="start center">
+            <mat-icon>search</mat-icon>
+            <mat-label class="matlabel"> &nbsp; Material</mat-label>
+
+
+          </div>
+
+
+          <mat-divider class="swidth1"></mat-divider>
+
+          <div class="swidth twinput" fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="start center">
+            <mat-icon>search</mat-icon>
+            <mat-label class="matlabel"> &nbsp; Inspection Method</mat-label>
+          </div>
+
+          <button class="button">Search</button>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="widthm">
+
+          <div class="swidth2 twinput1" fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="start center">
+            <mat-icon>search</mat-icon>
+            <mat-label class="matlabel"> &nbsp; Search</mat-label>
+          </div>
+
+        </div>
+        <div class="widthk" fxLayout="row" fxLayoutAlign="space-between center">
+          <div>
+            <div class="swidth3 twinput1" fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="space-between center">
+              <mat-label class="matlabel"> &nbsp; All</mat-label>
+              <img src="assets/images/play-button-arrowhead.svg" width="11px" class="spacing">
+            </div>
+          </div>
+          <div class="excelbox">
+            <img src="assets/images/excel.svg" width="20px">
+          </div>
+          <img src="assets/images/expand.svg" width="28px" class="expand">
+        </div>
+      </div>
+
+      <mat-table [dataSource]="dataSource" class="table tableborder">
+
+        <ng-container matColumnDef="mat">
+          <mat-header-cell *matHeaderCellDef class="headercolor padding_adjust_left align twidth1"> Material
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element;index as i" class="boldtext padding_adjust_left twidth1">
+            <div fxLayout="row" fxLayoutAlign="space-evenly center">
+              <div class="divbox" [ngStyle]="{'background-color':i%2==0 ? '#d87e39' : '#6f52ed'}"></div>
+              <label class="boldtext ttextsize">{{element.mat}}</label>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="matdesc">
+          <mat-header-cell *matHeaderCellDef class="headercolor twidth2"> Material Desc </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="ttextsize twidth2"> {{element.matdesc}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="matchar">
+          <mat-header-cell *matHeaderCellDef class="headercolor twidth2"> Material Characterstics </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="boldtext ttextsize twidth2"> {{element.matchar}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="desc">
+          <mat-header-cell *matHeaderCellDef class="headercolor twidth1"> Description </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="ttextsize twidth1"> {{element.desc}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="llimit">
+          <mat-header-cell *matHeaderCellDef class="headercolor twidth1"> Lower Limit </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="ttextsize twidth1"> {{element.llimit}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="ulimit">
+          <mat-header-cell *matHeaderCellDef class="headercolor twidth1"> Upper Limit </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="ttextsize twidth1"> {{element.ulimit}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="uom">
+          <mat-header-cell *matHeaderCellDef class="headercolor twidth1"> UOM </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="ttextsize twidth1"> {{element.uom}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="insmethod">
+          <mat-header-cell *matHeaderCellDef class="headercolor twidth1"> Inspec. Method </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="boldtext ttextsize twidth1"> {{element.insmethod}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="modrule">
+          <mat-header-cell *matHeaderCellDef class="headercolor padding_adjust_right twidth1"> Mod Rule
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="padding_adjust_right ttextsize twidth1"> {{element.modrule}}
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns" class="colheader"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+
+    </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>

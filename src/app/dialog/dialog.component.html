@@ -1,0 +1,15 @@
+<div class="dialog_layout">
+<h2 mat-dialog-title>Username</h2>
+
+<mat-dialog-content>
+<p>Name : {{data[0].username}}</p>
+<p>ID : {{data[0].id}}</p>
+<p>Age : {{data[0].age}}</p>
+<p>Email : {{data[0].email}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="close()">Close</button>
+    <button mat-raised-button color="warn" (click)="delete()">Delete this user</button>
+</mat-dialog-actions>
+</div>
